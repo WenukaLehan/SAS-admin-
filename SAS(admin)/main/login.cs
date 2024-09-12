@@ -20,7 +20,7 @@ namespace SAS_admin_.source_codes
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
             // Initialize Firestore
-            firestoreDb = FirestoreDb.Create("push-3e45d");
+            firestoreDb = FirestoreDb.Create("sas-wl03");
             Console.WriteLine("Firestore client initialized.");
 
 
@@ -41,10 +41,10 @@ namespace SAS_admin_.source_codes
         private void loginBtn_Click(object sender, EventArgs e)
         {
             // Example: Writing data to Firestore
-            //AddDocument(firestoreDb);
+            AddDocument(firestoreDb);
 
             // Example: Reading data from Firestore
-            ReadDocument(firestoreDb);
+            //ReadDocument(firestoreDb);
         }
 
         // Function to write data
