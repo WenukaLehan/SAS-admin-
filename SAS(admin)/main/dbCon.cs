@@ -14,13 +14,12 @@ namespace SAS_admin_.main
 
         }
 
-        public static FirestoreDb getDb()
+        public static FirestoreDb getDb(FirestoreDb firestoreDb)
         {
             // Path to your service account key filefolder
             string path = AppDomain.CurrentDomain.BaseDirectory + @"admin-sdk.json";
             // Set the environment variable to authenticate using the service account
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-            // Initialize Firestore
             firestoreDb = FirestoreDb.Create("sas-wl03");
             Console.WriteLine("Firestore client initialized.");
             return firestoreDb;
