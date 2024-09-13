@@ -1,4 +1,7 @@
 ﻿using Google.Cloud.Firestore;
+using SAS_admin_.admin;
+using SAS_admin_.main;
+using SAS_admin_.teacher;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -8,23 +11,13 @@ namespace SAS_admin_.source_codes
 
     public partial class login : Form
     {
-        FirestoreDb firestoreDb;
+        FirestoreDb db;
 
         public login()
         {
             InitializeComponent();
-            // Path to your service account key filefolder
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"admin-sdk.json";
 
-            // Set the environment variable to authenticate using the service account
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-
-            // Initialize Firestore
-            firestoreDb = FirestoreDb.Create("sas-wl03");
-            Console.WriteLine("Firestore client initialized.");
-
-
-
+            db = dbCon.getDb();
 
         }
 
@@ -33,25 +26,61 @@ namespace SAS_admin_.source_codes
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
 
-        private void loginBtn_Click(object sender, EventArgs e)
+        private async void loginBtn_Click(object sender, EventArgs e)
         {
-            // Example: Writing data to Firestore
-            AddDocument(firestoreDb);
+            string user = username.Text;
+            string pass = password.Text;
+            CollectionReference colRef = db.Collection("admins");
+            Query query = colRef.WhereEqualTo("username", user);
+            QuerySnapshot querySnapshot = await query.GetSnapshotAsync();
 
-            // Example: Reading data from Firestore
-            //ReadDocument(firestoreDb);
+
+            if (querySnapshot.Documents.Count > 0)
+            {
+
+                for (int i = 0; i < querySnapshot.Documents.Count; i++)
+                {
+                    Dictionary<string, object> data = querySnapshot.Documents[i].ToDictionary();
+
+                    if (data["password"].ToString() == pass)
+                    {
+                        MessageBox.Show("Login successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (data["type"].ToString() == "admin")
+                        {
+                            aDashboard ad = new aDashboard();
+                            ad.Show();
+                            this.Hide();
+                        }
+                        if (data["type"].ToString() == "attend")
+                        {
+                            tDashboard ad = new tDashboard();
+                            ad.Show();
+                            this.Hide();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("username not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         // Function to write data
         static void AddDocument(FirestoreDb db)
         {
             // Create a new document reference
-            DocumentReference docRef = db.Collection("users").Document("user2");
+            DocumentReference docRef = db.Collection("users").Document("user3");
 
             // Define a dictionary with data to be stored
             var user = new
@@ -71,7 +100,7 @@ namespace SAS_admin_.source_codes
         static async void ReadDocument(FirestoreDb db)
         {
             // Reference to the document to be read
-            DocumentReference docRef = db.Collection("users").Document("user2");
+            DocumentReference docRef = db.Collection("users").Document("user3");
 
             // Fetch the document snapshot
             DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
