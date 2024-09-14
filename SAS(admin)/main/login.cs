@@ -18,7 +18,8 @@ namespace SAS_admin_.source_codes
         {
             InitializeComponent();
 
-            db = dbCon.getDb();
+            db = dbCon.getDb(            // Initialize Firestore
+            firestoreDb);
 
         }
 
