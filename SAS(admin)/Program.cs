@@ -1,5 +1,4 @@
-﻿using SAS_admin_.admin;
-using SAS_admin_.source_codes;
+﻿using SAS_admin_.attender;
 using System;
 using System.Windows.Forms;
 
@@ -16,7 +15,7 @@ namespace SAS_admin_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+            Application.Run(new Form1());
         }
     }
 }

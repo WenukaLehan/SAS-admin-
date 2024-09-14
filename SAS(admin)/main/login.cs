@@ -1,5 +1,6 @@
 ﻿using Google.Cloud.Firestore;
 using SAS_admin_.admin;
+using SAS_admin_.attender;
 using SAS_admin_.main;
 using SAS_admin_.teacher;
 using System;
@@ -58,7 +59,7 @@ namespace SAS_admin_.source_codes
                         }
                         if (data["type"].ToString() == "attend")
                         {
-                            tDashboard ad = new tDashboard();
+                            Form1 ad = new Form1();
                             ad.Show();
                             this.Hide();
                         }
