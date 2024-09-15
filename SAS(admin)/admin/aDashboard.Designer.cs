@@ -161,9 +161,9 @@
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTitleChildForm.Location = new System.Drawing.Point(58, 41);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(50, 16);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(146, 16);
             this.lblTitleChildForm.TabIndex = 1;
-            this.lblTitleChildForm.Text = "Imash";
+            this.lblTitleChildForm.Text = "Imash Imash Imash";
             // 
             // iconCurrentChildForm
             // 
