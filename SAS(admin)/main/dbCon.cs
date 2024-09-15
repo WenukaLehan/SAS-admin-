@@ -14,7 +14,7 @@ namespace SAS_admin_.main
 
         }
 
-        public static FirestoreDb getDb(FirestoreDb firestoreDb)
+        internal static FirestoreDb getDb()
         {
             // Path to your service account key filefolder
             string path = AppDomain.CurrentDomain.BaseDirectory + @"admin-sdk.json";
@@ -24,5 +24,7 @@ namespace SAS_admin_.main
             Console.WriteLine("Firestore client initialized.");
             return firestoreDb;
         }
+
+
     }
 }

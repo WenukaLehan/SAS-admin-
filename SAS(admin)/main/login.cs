@@ -2,7 +2,6 @@
 using SAS_admin_.admin;
 using SAS_admin_.attender;
 using SAS_admin_.main;
-using SAS_admin_.teacher;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -18,8 +17,7 @@ namespace SAS_admin_.source_codes
         {
             InitializeComponent();
 
-            db = dbCon.getDb(            // Initialize Firestore
-            firestoreDb);
+            db = dbCon.getDb();
 
         }
 

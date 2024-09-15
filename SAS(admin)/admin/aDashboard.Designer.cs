@@ -105,7 +105,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.RectangleXmark;
             this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 32;
@@ -161,9 +161,9 @@
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTitleChildForm.Location = new System.Drawing.Point(58, 41);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(49, 16);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(50, 16);
             this.lblTitleChildForm.TabIndex = 1;
-            this.lblTitleChildForm.Text = "Home";
+            this.lblTitleChildForm.Text = "Imash";
             // 
             // iconCurrentChildForm
             // 
@@ -204,7 +204,7 @@
             this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Gainsboro;
-            this.logout.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket;
+            this.logout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
             this.logout.IconColor = System.Drawing.Color.Gainsboro;
             this.logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.logout.IconSize = 26;
@@ -226,7 +226,7 @@
             this.classes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.classes.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.classes.IconChar = FontAwesome.Sharp.IconChar.Chalkboard;
+            this.classes.IconChar = FontAwesome.Sharp.IconChar.Blackboard;
             this.classes.IconColor = System.Drawing.Color.Gainsboro;
             this.classes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.classes.IconSize = 32;
@@ -341,7 +341,7 @@
             this.iconButtonAttendence.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonAttendence.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonAttendence.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonAttendence.IconChar = FontAwesome.Sharp.IconChar.CalendarDays;
+            this.iconButtonAttendence.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
             this.iconButtonAttendence.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonAttendence.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAttendence.IconSize = 32;
@@ -364,7 +364,7 @@
             this.iconButtonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonDashboard.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonDashboard.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonDashboard.IconChar = FontAwesome.Sharp.IconChar.Dashboard;
+            this.iconButtonDashboard.IconChar = FontAwesome.Sharp.IconChar.Gauge;
             this.iconButtonDashboard.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonDashboard.IconSize = 32;
